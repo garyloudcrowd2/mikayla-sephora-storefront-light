@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mikayla Nogueira · Sephora Creator Storefront (Light)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-2.css" />
+  <style>
+    :root {
+      --sx-red: #e4002b;
+      --sx-red-dark: #b80022;
+      --sx-cream: #faf7f3;
+      --sx-ink: #1a1a1a;
+      --sx-line: #ececec;
+    }
+    /* Pre-header strip */
+    .lf-prebar {
+      background: var(--sx-ink); color: #fff;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      display: flex; justify-content: center; gap: 36px; padding: 8px 32px;
+    }
+    .lf-prebar span { opacity: 0.85; }
+    .lf-prebar .lf-prebar-pink { color: var(--sx-red); opacity: 1; font-weight: 600; }
+
+    /* Chrome → white */
+    .sephora-chrome { background: #fff !important; color: var(--sx-ink) !important; border-bottom: 1px solid var(--sx-line); }
+    .sc-row { padding: 18px 32px !important; }
+    .sc-burger span { background: var(--sx-ink) !important; }
+    .sc-logo { color: var(--sx-ink) !important; }
+    .sc-nav a { color: var(--sx-ink) !important; }
+    .sc-nav a:hover { border-color: var(--sx-red) !important; color: var(--sx-red) !important; }
+    .sc-nav .sc-active { color: var(--sx-red) !important; border-bottom: 2px solid var(--sx-red); }
+    .sc-search { background: var(--sx-cream) !important; color: var(--sx-ink) !important; border: 1px solid var(--sx-line) !important; border-radius: 999px; }
+    .sc-icon { color: var(--sx-ink) !important; }
+    .sc-bag-count { background: var(--sx-red) !important; }
+    .sc-bread { background: #fff !important; color: #777 !important; border-top: 1px solid var(--sx-line); padding: 12px 32px !important; }
+    .sc-bread .sc-sep { color: #ccc !important; }
+    .sc-bread .sc-current { color: var(--sx-ink) !important; font-weight: 600; }
+
+    .btn-pri { background: var(--sx-red) !important; color: #fff !important; }
+    .btn-pri:hover { background: var(--sx-red-dark) !important; }
+    .hf-cta .btn-pri, .hm-floor .btn-pri { background: #fff !important; color: #000 !important; }
+    .hf-cta .btn-pri:hover, .hm-floor .btn-pri:hover { background: var(--sx-red) !important; color: #fff !important; }
+
+    .stat-strip { background: var(--sx-cream) !important; }
+
+    /* Light hero */
+    .hero-broadcast { background: #fff !important; color: var(--sx-ink) !important; }
+    .hb-backdrop-img { opacity: 0.18 !important; filter: blur(70px) saturate(1.4) !important; }
+    .hb-backdrop-tint { background: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, var(--sx-cream) 60%, #fff 100%) !important; }
+    .hb-grain { opacity: 0.04 !important; }
+    .hb-chrome { color: var(--sx-ink) !important; border-bottom: 1px solid var(--sx-line) !important; }
+    .hb-divider { background: var(--sx-line) !important; }
+    .hb-name { color: var(--sx-ink) !important; }
+    .hb-name-italic em { color: var(--sx-red) !important; }
+    .hb-byline, .hb-stats { color: #555 !important; }
+    .hb-stats b { color: var(--sx-ink) !important; }
+    .hb-name-strip { border-bottom: 1px solid var(--sx-line) !important; }
+    .hb-reel-frame { box-shadow: 0 30px 60px -20px rgba(228,0,43,0.22), 0 12px 24px -10px rgba(0,0,0,0.12) !important; }
+    .hb-reel:not(.is-active) { opacity: 0.85 !important; filter: brightness(0.96) !important; }
+    .hb-reel-meta { color: var(--sx-ink) !important; }
+    .hb-reel-cap { color: #444 !important; }
+    .hb-reel-vignette { background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.35) 100%) !important; }
+    .hb-ticker { background: var(--sx-cream) !important; color: var(--sx-ink) !important; border-top: 1px solid var(--sx-line) !important; }
+    .hb-ticker-sep { color: var(--sx-red) !important; }
+    .hb-live { color: var(--sx-red) !important; }
+    .hb-live-dot { background: var(--sx-red) !important; }
+    .hb-ticker-label { background: var(--sx-red) !important; color: #fff !important; }
+    .hb-btn-watch { background: var(--sx-ink) !important; color: #fff !important; }
+    .hb-btn-watch:hover { background: var(--sx-red) !important; }
+    .hb-btn-shop { background: var(--sx-red) !important; color: #fff !important; border: 0 !important; }
+    .hb-btn-shop:hover { background: var(--sx-red-dark) !important; }
+    .hb-reel-controls button { background: rgba(0,0,0,0.55) !important; color: #fff !important; }
+
+    /* Cinema marquee — light */
+    .hero-marquee { background: #fff !important; color: var(--sx-ink) !important; }
+    .hm-line1, .hm-line2 { color: var(--sx-ink) !important; }
+    .hm-tagline em { color: var(--sx-red) !important; }
+    .hm-floor { border-top: 1px solid var(--sx-line) !important; }
+    .hm-floor .btn-pri { background: var(--sx-red) !important; color: #fff !important; }
+    .hm-floor .btn-pri:hover { background: var(--sx-red-dark) !important; }
+    .hm-quote { color: #666 !important; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="data.jsx"></script>
+  <script type="text/babel" src="chrome.jsx"></script>
+  <script type="text/babel" src="hero.jsx"></script>
+  <script type="text/babel" src="reels.jsx"></script>
+  <script type="text/babel" src="sections.jsx"></script>
+
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "hero": "broadcast",
+      "shopTheLook": "timeline"
+    }/*EDITMODE-END*/;
+
+    function App() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+      const [openReel, setOpenReel] = React.useState(null);
+      const [bag, setBag] = React.useState([]);
+
+      const addToBag = (p) => setBag(b => [...b, p]);
+
+      return (
+        <div className="storefront">
+          <div className="lf-prebar">
+            <span>Free standard shipping over <strong>$35</strong></span>
+            <span className="lf-prebar-pink">★ Beauty Insider · earn 1pt per $1</span>
+            <span>Buy now, pay later with Klarna</span>
+          </div>
+          <SephoraChrome />
+          <Hero variant={t.hero} onOpenReel={setOpenReel} />
+          <StatStrip />
+          <SignatureKit onAdd={addToBag} />
+          <ReelsRail onOpen={setOpenReel} />
+          <ShopGrid onAdd={addToBag} />
+          <Edits />
+          <Reviews />
+          <Footer />
+
+          <ReelModal reel={openReel} variant={t.shopTheLook} onClose={() => setOpenReel(null)} />
+          <MiniBag items={bag} />
+
+          <TweaksPanel>
+            <TweakSection label="Hero treatment" />
+            <TweakSelect
+              label="Layout"
+              value={t.hero}
+              options={[
+                { value: "fullbleed", label: "Reel + portrait" },
+                { value: "split", label: "Editorial split" },
+                { value: "marquee", label: "Cinema marquee" },
+                { value: "broadcast", label: "Broadcast (TV channel)" },
+              ]}
+              onChange={(v) => setTweak('hero', v)}
+            />
+            <TweakSection label="Explore products (open any reel)" />
+            <TweakRadio
+              label="Interaction"
+              value={t.shopTheLook}
+              options={[
+                { value: "timeline", label: "Side timeline" },
+                { value: "hotspots", label: "Pause + dots" },
+                { value: "drawer", label: "Scrub drawer" },
+              ]}
+              onChange={(v) => setTweak('shopTheLook', v)}
+            />
+            <TweakSection label="Try it" />
+            <TweakButton label="Open featured reel" onClick={() => setOpenReel(REELS[0])} />
+          </TweaksPanel>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('app')).render(<App />);
+  </script>
+</body>
+</html>
